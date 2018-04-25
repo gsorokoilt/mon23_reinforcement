@@ -118,12 +118,14 @@ results = articles[:response][:results]#accesible to method further along in cod
    result[:views] = 0  #syntactically correct way to add k/v to hash
  end
 
-#need random selection from results
+
 
 def read_article(results)
   sample = results.sample
   return results
+  result[:views] += 1
 end
+
 
 def display_views(results)
   results.each do |result|
@@ -131,6 +133,11 @@ def display_views(results)
   return list
   end
 end
+
+p read_article(results)
+
+
+
 
 p display_views(results)
 
