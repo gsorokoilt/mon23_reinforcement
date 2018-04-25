@@ -122,23 +122,27 @@ results = articles[:response][:results]#accesible to method further along in cod
 
 def read_article(results)
   sample = results.sample
-  return results
-  result[:views] += 1
+  sample[:views] += 1
+  return sample
 end
 
 
 def display_views(results)
   results.each do |result|
   list = result[:views]
-  return list
+  p list
   end
 end
 
-p read_article(results)
+5.times do
+read_article(results)
+end
+
+display_views(results)
 
 
 
 
-p display_views(results)
+
 
 # Write a method called display_views that iterates through the articles and displays their titles and view counts, like so:
